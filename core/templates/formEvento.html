@@ -1,0 +1,39 @@
+{% extends 'nav.html' %}
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<title>Eventos</title>
+</head>
+<body>		
+	{% block content %}     
+	<div class="container">
+		<h4>Adicionar Evento</h4>
+		<form action="{% url 'addEvento' %}" method="post">{% csrf_token %}
+			<div>
+				<label> Nome </label> <input type="text" name="nome" required>
+			</div>
+			<div>
+				<label> Local </label> <input type="text" name="local" required>
+			</div>
+			<div>
+				<label> Data </label> <input type="date" name="data" required>
+			</div>
+			<div>
+				<label> Horário </label> <input type="time" name="horario" required>
+			</div>
+			<div>
+				<label> Descrição </label> <textarea type="text" name="descricao" required></textarea>
+			</div>
+			<div>
+				<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+				<button class="waves-effect waves-light btn" type="reset">Limpar</button>
+			</div>
+		</form>
+	</div>
+	{%endblock%}
+</body>
+</html>

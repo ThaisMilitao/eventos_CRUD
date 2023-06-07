@@ -1,0 +1,48 @@
+{% extends 'nav.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+<title>Eventos</title>
+</head>
+<body>	
+	{% block content %}     
+	<div class="container">
+		<h4>Detalhes do evento</h4>
+		<div class="row">
+			<div class="col s12">
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title">Evento</span>
+						<p>
+							<strong>Id: </strong><span>{{eventos.id}}</span>
+						</p>
+						<p>
+							<strong>Nome: </strong><span>{{eventos.nome}}</span>
+						</p>
+						<p>
+							<strong>Local: </strong><span>{{eventos.local}}</span>
+						</p>
+						<p>
+							<strong>Data: </strong><span>{{eventos.data|date:'d/m/Y'}}</span>
+						</p>
+						<p>
+							<strong>Horario: </strong><span>{{eventos.horario}}</span>
+						</p>
+						<p>
+							<strong>Descrição: </strong><span>{{eventos.descricao}}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{%endblock%}     
+</body>
+</html>

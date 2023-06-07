@@ -1,0 +1,25 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+
+<title>Eventos</title>
+</head>
+<body>
+	<nav>
+		<div class="nav-wrapper container">
+			<a href="{% url 'home' %}" class="brand-logo">Sistema de eventos</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="{% url 'home' %}">Home</a></li>
+				<li><a href="{% url 'addEvento' %}">Adicionar Evento</a></li>
+			</ul>
+		</div>
+	</nav>
+	{% block content %}
+    {% endblock %}
+</body>
+</html>

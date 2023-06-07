@@ -1,0 +1,36 @@
+{% extends 'nav.html' %}
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Eventos</title>
+</head>
+<body>		
+	{% block content %}     
+	<div class="container">
+		<h4>Editar Evento - {{eventos.nome}}</h4>
+		<form action="{% url 'editarEvento' eventos.id %}" method="post">{% csrf_token %}
+			<div>
+				<label> Nome </label> <input type="text" name="nome" value="{{eventos.nome}}"required>
+			</div>
+			<div>
+				<label> Local </label> <input type="text" name="local" value="{{eventos.local}}"required>
+			</div>
+			<div>
+				<label> Data </label> <input type="date" name="data" value="{{eventos.data|date:'Y-m-d'}}"required>
+			</div>
+			<div>
+				<label> Horário </label> <input type="time" name="horario" value="{{eventos.horario|time:'H:i'}}"required>
+			</div>
+			<div>
+				<label> Descrição </label> <textarea type="text" name="descricao" required>{{eventos.descricao}}</textarea>
+			</div>
+			<div>
+				<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+				<button class="waves-effect waves-light btn" type="reset">Limpar</button>
+			</div>
+		</form>
+	</div>
+	{%endblock%}
+</body>
+</html>

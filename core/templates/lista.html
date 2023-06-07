@@ -1,0 +1,45 @@
+{% extends 'nav.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Eventos</title>
+</head>
+<body>
+	{% block content %}     
+	<div class="container">
+		<h3>Lista de eventos</h3>
+		<p></p>
+		<table class="highlight">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Local</th>
+					<th>Data</th>
+					<th>Horario</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>{%for e in eventos%}
+				<tr>
+					<td ><span>{{e.nome}}</span></a></td>
+					<td>{{e.local}}</td>
+					<td>{{e.data|date:'d/m/Y'}}</td>
+					<td>{{e.horario|time:'H:i'}}</td>
+					<td><a href="{% url 'editarEvento' e.id %}"
+						class="small material-icons" type="button">edit
+					</a></td>
+					<td><a
+						href="{% url 'deletarEvento' e.id %}"
+						class="small material-icons" type="button">delete</a></td>
+					<td><a
+						href="{% url 'detalharEvento' e.id %}"
+						class="small material-icons" type="button">description</a></td>
+				</tr>
+				{%endfor%}
+			</tbody>
+		</table>
+	</div>
+	{%endblock%}     
+</body>
+</html>
