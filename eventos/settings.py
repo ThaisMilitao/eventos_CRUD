@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-(88c!g#@k*!j&oact1cpago9&o$+m00=^ap_-u*6$edm$3jc#m
 DEBUG = False
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
 
 ALLOWED_HOSTS = []
 
