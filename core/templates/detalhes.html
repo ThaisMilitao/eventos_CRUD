@@ -1,17 +1,4 @@
-{% extends 'nav.html' %}
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<!-- Compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-
-<title>Eventos</title>
-</head>
-<body>	
+{% extends 'nav.html' %}	
 	{% block content %}     
 	<div class="container">
 		<h4>Detalhes do evento</h4>
@@ -38,11 +25,12 @@
 						<p>
 							<strong>Descrição: </strong><span>{{eventos.descricao}}</span>
 						</p>
+						<p>
+							<strong>Evento criado por: </strong><span>{{eventos.user}}</span>
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	{%endblock%}     
-</body>
-</html>

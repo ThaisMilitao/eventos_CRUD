@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -10,3 +11,9 @@ class Evento(models.Model):
     data= models.DateField(verbose_name='data', null=True )
     horario= models.TimeField(verbose_name='horario', null=True)
     descricao = models.TextField(verbose_name='descricao', null=True)
+    user = models.ForeignKey(
+        User, 
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True
+    )

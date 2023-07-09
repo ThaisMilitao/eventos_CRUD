@@ -1,20 +1,10 @@
-{% extends 'nav.html' %}
-<!DOCTYPE html >
-<html>
-<head>
-<meta charset="UTF-8">
-<!-- Compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<title>Eventos</title>
-</head>
-<body>		
+{% extends 'nav.html' %}	
 	{% block content %}     
 	<div class="container">
 		<h4>Adicionar Evento</h4>
 		<form action="{% url 'addEvento' %}" method="post">{% csrf_token %}
 			<div>
-				<label> Nome </label> <input type="text" name="nome" required>
+				<label> Nome </label> <input type="text" name="nome"required >
 			</div>
 			<div>
 				<label> Local </label> <input type="text" name="local" required>
@@ -35,5 +25,3 @@
 		</form>
 	</div>
 	{%endblock%}
-</body>
-</html>

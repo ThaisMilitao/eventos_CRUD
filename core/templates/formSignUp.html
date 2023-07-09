@@ -1,0 +1,45 @@
+{% extends 'nav.html' %}	
+	{% block content %}     
+	<div class="container">
+	<h4>SignUp</h4>
+	<p>{% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+			<li>{{ message }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}</p>
+	<div class="row col s1">
+		<form action="{% url 'signUp' %}" method="post">{% csrf_token %}
+			<div class="row">
+				<div class="col s6">
+				  <label for="username">Username</label>
+				  <input id="username" type="text" class="validate" name="username" value="{{usuario.username}}">
+				</div>
+			</div>
+		  <div class="row">
+			<div class="col s6">			  
+				<label for="first_name">Name</label>
+				<input id="first_name" type="text" class="validate" name="name" value="{{usuario.first_name}}">
+			</div>
+		  </div>
+		  <div class="row">
+			<div class="col s6">
+				<label for="email">Email</label>
+				<input id="email" type="email" class="validate"  name="email"value="{{usuario.email}}">
+			</div>
+		  </div>
+		  <div class="row">
+			<div class="col s6">			  
+			<label for="password">Password</label>
+			<input id="password" type="password" class="validate" name="password">
+			</div>
+		  </div>
+		  <div>
+			<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+			<button class="waves-effect waves-light btn" type="reset">Limpar</button>
+		</div>
+		</form>
+	  </div>
+	</div>
+	{%endblock%}

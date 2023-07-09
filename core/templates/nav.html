@@ -14,8 +14,16 @@
 		<div class="nav-wrapper container">
 			<a href="{% url 'home' %}" class="brand-logo">Sistema de eventos</a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				{%if user.is_authenticated%}
 				<li><a href="{% url 'home' %}">Home</a></li>
 				<li><a href="{% url 'addEvento' %}">Adicionar Evento</a></li>
+				<li><a href="{% url 'meusEventos' %}">Meus Eventos</a></li>
+				<li><a href="{% url 'logOut' %}">Sair</a></li>
+				{% endif %}
+				{%if not user.is_authenticated%}
+				<li><a href="{% url 'login' %}">Login</a></li>
+				<li><a href="{% url 'signUp' %}">SignUp</a></li>
+				{%endif%}
 			</ul>
 		</div>
 	</nav>
