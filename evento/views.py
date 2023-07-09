@@ -43,7 +43,6 @@ def addEvento(request):
     return render(request, 'formEvento.html')
 
 # Funcao para  ver detalhes do evento
-@login_required(login_url='login')
 def detalharEvento(request, id):
     # busca pelo objeto apartir do id, em seguida cria um dicionario para armezenar o dado
     # e depois tornar o html e o dicionario
